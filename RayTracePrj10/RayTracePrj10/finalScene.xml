@@ -1,0 +1,488 @@
+
+<xml>
+    <scene>
+        <background r="1" g="1" b="1" texture="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/clouds.ppm">
+            <scale y="0.4"/>
+            <translate y="-0.1"/>
+        </background>
+        <environment value="0.3" texture="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/clouds.ppm"/>
+        
+        <!-- Objects -->
+        
+        <!--table top -->
+        <object type="plane" name="groundPlane" material="ground">
+            <scale value="50"/>
+            <rotate angle="90" z="1"/>
+        </object>
+        <!--  <object type="plane" name="wallPlane" material="ground">
+         <scale value="100"/>
+         <rotate angle="90" z="y"/>
+         <translate x="-30" y = "0" z="0"/>
+         </object>
+         <object type="plane" name="floorPlane" material="ground">
+         <scale value="100"/>
+         <rotate angle="0" z="1"/>
+         <translate x="0" y = "0" z="-50"/>
+         </object>-->
+        <!-- room -->
+        <object name="room">
+            <translate x="0" y="0" z="12"/>
+            <scale value="10"/>
+            <object type="plane" name="WallBottom" material="floor">
+                <scale value="32"/>
+                <translate z="-20"/>
+            </object>
+            <object type="plane" name="WallTop" material="floor">
+                <scale value="32"/>
+                <rotate angle="180" x="1"/>
+                <translate z="20"/>
+            </object>
+            <object type="plane" name="WallBack" material="floor">
+                <scale value="32"/>
+                <rotate angle="90" x="1"/>
+                <translate y="40"/>
+            </object>
+            <object type="plane" name="WallLeft" material="floor">
+                <scale value="32"/>
+                <rotate angle="90" y="1"/>
+                <translate x="-15"/>
+            </object>
+            <object type="plane" name="WallRight" material="darkwood">
+                <scale value="32"/>
+                <rotate angle="-90" y="1"/>
+                <translate x="15" z="-40"/>
+            </object>
+        </object>
+        <!-- window -->
+        <object name="obstructor">
+            <translate x="0" y="0" z="12"/>
+            <scale value="10"/>
+            <object type="plane" name="WallRight1" material="ground">
+                <scale value="15"/>
+                <rotate angle="-90" y="1"/>
+                <translate x="16" y="20" z="0"/>
+            </object>
+            <object type="plane" name="WallRight2" material="ground">
+                <scale value="15"/>
+                <rotate angle="-90" y="1"/>
+                <translate x="16" y="-20" z="0"/>
+            </object>
+        </object>
+        <!-- Sphere -->
+        <object type="sphere" name="sphere2" material="refractiveSphere">
+            <scale value="3"/>
+            <rotate angle="30" y="1"/>
+            <translate x="30" y="-5" z="3"/>
+        </object>
+        <!-- Tea Pot -->
+        <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/teapot_hi.obj" material="white2">
+            <scale value="0.75"/>
+            <rotate angle="0" x="1"/>
+            <rotate angle="45" z="1"/>
+            <translate x="28" y="-18" z="3"/>
+        </object>
+        <!--Chess board -->
+        <object>
+            <!-- board -->
+            <rotate angle="180" z="1"/>
+            <translate x = "0" y="0" z="1"/>
+            <!--box -->
+            <object name="box">
+                <scale value="12"/>
+                <translate x="0" y="0" z="-24.1"/>
+                <object type="plane" name="boardPlane" material="woodBoard">
+                    <scale value="2"/>
+                    <translate z="2"/>
+                </object>
+                <object type="plane" name="WallTop" material="woodBoard">
+                    <scale value="2"/>
+                    <rotate angle="180" x="1"/>
+                    <translate z="-2"/>
+                </object>
+                <object type="plane" name="WallBack" material="woodBoard">
+                    <scale value="2"/>
+                    <rotate angle="90" x="1"/>
+                    <translate y="-2"/>
+                </object>
+                <object type="plane" name="WallFront" material="woodBoard">
+                    <scale value="2"/>
+                    <rotate angle="90" x="1"/>
+                    <translate y="-2"/>
+                </object>
+                <object type="plane" name="WallLeft" material="woodBoard">
+                    <scale value="2"/>
+                    <rotate angle="90" y="1"/>
+                    <translate x="2"/>
+                </object>
+                <object type="plane" name="WallRight" material="woodBoard">
+                    <scale value="2"/>
+                    <rotate angle="-90" y="1"/>
+                    <translate x="-2"/>
+                </object>
+            </object>
+            
+            <object type="plane" name="boardPlane" material="checkerMtl">
+                <scale value="20"/>
+                <rotate angle="0" z="2"/>
+            </object>
+            
+            <!--White -->
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessRook.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="16" y="-35" z="0.4"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessRook.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-18" y="-35" z="0.4"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessKnight.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="7" y="-1" z="-2.3"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessKnight.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-17" y="-1" z="-2.3"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessBishop.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-6" y="-1" z="-2.3"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessBishop.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="7" y="-1" z="-2.3"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessKing.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="7" y="-1" z="-2.3"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessQueen.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="7" y="-1" z="-2.3"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-18" y="-29" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="mtl1">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-14" y="-29" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-9" y="-29" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-3" y="-29" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="2" y="-19" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="7" y="-29" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="12" y="-29" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="white">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="16" y="-29" z="1"/>
+            </object>
+            <!-- black-->
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessRook.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="16" y="0" z="0.4"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessRook.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-18" y="0" z="0.4"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessKnight.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="8" y="34" z="-2.3"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessKnight.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-16" y="34" z="-2.3"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessBishop.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="7" y="34" z="-2.3"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessBishop.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-7" y="34" z="-2.3"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessKing.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="7" y="34" z="-2.3"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessQueen.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="8" y="34" z="-2.3"/>
+            </object>
+            <!-- black pawns -->
+            
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-18" y="-5" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-13" y="-5" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-9" y="-5" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="-3" y="-5" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="2" y="-9" z="1"/>
+               <!-- <motion>
+                    <instance>
+                        <translate x="0" y="10" z="0"/>
+                    </instance>
+                </motion>-->
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="7" y="-5" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="12" y="-5" z="1"/>
+            </object>
+            <object type="obj" name="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/chessPawn.obj" material="black">
+                <scale value="4"/>
+                <rotate angle="90" x="1"/>
+                <rotate angle="0" y="1"/>
+                <translate x="16" y="-5" z="1"/>
+            </object>
+        </object>
+        
+        
+        <!-- <object type="sphere" name="sphere2" material="earth">
+         <scale value="5"/>
+         <translate x="22" y="30" z="5"/>
+         </object>
+         -->
+        
+        
+        <!------------------------------ Materials ------------------------------------->
+        <material type="blinn" name="ground">
+            <diffuse r="1" g="1" b="1" texture="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/darkwoodTable.ppm">
+            </diffuse>
+            <specular value="0"/>
+        </material>
+        <material type="blinn" name="floor">
+            <diffuse  r="0.2" g="0.2" b="0.2"/>
+            <specular value="0"/>
+        </material>
+
+        <material type="blinn" name="darkwood">
+            <diffuse r="1" g="1" b="1" texture="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/darkwood.ppm">
+            </diffuse>
+            <specular value="0"/>
+        </material>
+        <material type="blinn" name="woodBoard">
+            <diffuse r="1" g="1" b="1" texture="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/boardtex.ppm">
+            </diffuse>
+            <specular value="0.9"/>
+            <glossiness value="100"/>
+            <reflection value="0.5"/>
+        </material>
+        <material type="blinn" name="refractiveSphere">
+            <diffuse  r="0.1" g="0.1" b="0.9"/>
+            <specular r="0.9" g="0.9" b="1.0" value="0.8"/>
+            <glossiness value="10"/>
+            <refraction value="0.8" index="1.52"/>
+            <absorption r="0.01" g="0.001" b="0.0001"/>
+        </material>
+        <material type="blinn" name="checkerMtl">
+            <diffuse texture="checkerboard">
+                <color1 r="0.2" g="0.2" b="0.2" />
+                <color2 r="0.8" g="0.8" b="0.8" />
+                <scale x="0.25" y="0.25"/>
+            </diffuse>
+            <specular value="0.8"/>
+            <glossiness value="10"/>
+            <reflection value="0.2"/>
+        </material>
+      <!--  <material type="blinn" name="bricks">
+            <diffuse texture="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/bricks.ppm">
+            </diffuse>
+            <specular value="0.8"/>
+            <glossiness value="100"/>
+            <reflection value="0.5"/>
+        </material>
+        <material type="blinn" name="earth">
+            <diffuse texture="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/earthmap.ppm">
+            </diffuse>
+            <specular value="0.8"/>
+            <glossiness value="100"/>
+            <reflection value="0.5"/>
+        </material>
+        <material type="blinn" name="sun">
+            <diffuse texture="/Users/varunk/Desktop/RayTracerProj1/RayTracePrj7/RayTracePrj7/sunmap.ppm">
+            </diffuse>
+            <specular value="0.9"/>
+            <glossiness value="100"/>
+            <reflection value="0.5"/>
+        </material>
+        <material type="blinn" name="refractive">
+            <diffuse value="0"/>
+            <specular value="0.8"/>
+            <glossiness value="100"/>
+            <refraction index="1.52" value="1"/>
+        </material>-->
+      <material type="blinn" name="black">
+          <diffuse  r="0.0" g="0.0" b="0.0"/>
+          <specular r="1.0" g="1.0" b="1.0" value="0.7"/>
+          <glossiness value="20"/>
+        </material>
+        <material type="blinn" name="mtl1">
+            <diffuse  r="0.0" g="0.0" b="0.0"/>
+            <specular r="1.0" g="1.0" b="1.0" value="0.7"/>
+            <glossiness value="20"/>
+            <reflection value="0.8" glossiness="0.1"/>
+        </material>
+        <!--<material type="blinn" name="mtl1">
+           <diffuse  r="0.2" g="0.2" b="0.2"/>
+            <specular value="0.8"/>
+            <glossiness value="80"/>
+            <reflection value="0.8"/>
+        </material>-->
+        <material type="blinn" name="white2">
+            <diffuse  r="1" g="1" b="1"/>
+            <specular r="1.0" g="1.0" b="1.0" value="0.7"/>
+            <glossiness value="0"/>
+            <reflection value="0.8" glossiness="0.1"/>
+        </material>
+        
+        <material type="blinn" name="wall">
+            <diffuse  r="1" g="1" b="1"/>
+            <specular value="0"/>
+        </material>
+        <material type="blinn" name="wallRed">
+            <diffuse  r="1.0" g="0.5" b="0.5"/>
+            <specular value="0"/>
+        </material>
+        <material type="blinn" name="wallBlue">
+            <diffuse  r="0.5" g="0.5" b="1.0"/>
+            <specular value="0"/>
+        </material>
+        <material type="blinn" name="white">
+            <diffuse value="0"/>
+            <specular value="0.8"/>
+            <glossiness value="20"/>
+            <reflection value="0.8" glossiness="0.1"/>
+        </material>
+        <!-- Lights -->
+        <!--<light type="ambient" name="ambientLight">
+            <intensity value="0.2"/>
+        </light>-->
+      <!--  <light type="direct" name="directLight">
+            <intensity value="0.6"/>
+            <direction x="-1" y="0.0" z="0"/>
+        </light>-->
+        <!--<light type="point" name="pointLight">
+         <intensity r="1" g="1" b="1" value="1.0"/>
+         <position x="20" y="0" z="10"/>
+         </light>-->
+        <light type="point" name="pointLight">
+            <intensity value="1.0"/>
+            <position x="80" y="-10" z="50"/>
+            <size value="5"/>
+        </light>
+    </scene>
+    
+     <camera>
+     <position x="-67" y="-37" z="60"/>
+     <target x="-2" y="0" z="0"/>
+     <up x="0" y="0" z="1"/>
+     <fov value="30"/>
+     <width value="800"/>
+     <height value="600"/>
+    <!--<focaldist value="90"/>
+     <dof value="1.9"/>
+
+     <shutter value = "0.15"/>-->
+     </camera>
+   <!-- <camera>
+        <position x="-600" y="-500" z="500"/>
+        <target x="2" y="0" z="3"/>
+        <up x="0" y="0" z="1"/>
+        <fov value="30"/>
+        <width value="800"/>
+        <height value="600"/>
+    </camera>-->
+</xml>

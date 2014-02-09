@@ -1,0 +1,24 @@
+<xml>
+    <scene>
+        <object type="sphere" name="sphere1">
+            <scale value="25.0"/>
+            <translate x="7" y="0" z="-100"/>
+        </object>
+        <object type="sphere" name="sphere2">
+            <scale value="2.0"/>
+            <translate x="0" y="0" z="-20"/>
+            <object type="sphere" name="sphere3">
+                <scale value="1.0"/>
+                <translate x="-5" y="0" z="-10"/>
+            </object>
+        </object>
+    </scene>
+    <camera>
+        <position x="0" y="0" z="0"/>
+        <target x="0" y="0" z="-1"/>
+        <up x="0" y="1" z="0"/>
+        <fov value="40"/>
+        <width value="800"/>
+        <height value="600"/>
+    </camera>
+</xml>
